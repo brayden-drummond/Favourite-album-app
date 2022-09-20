@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import styles from './Navbar.module.scss'
+
 export default function Navbar() {
   return (
-    <nav className="navbar">
+    <nav className={styles.navbar}>
       <Link to="/">
-        <div className="navbar-title">Movies</div>
+        <div className={styles.title}>Movies</div>
       </Link>
-      <div className="navbar-links">
+      <div className={styles.links}>
         <Link to="/play">Play</Link>
         <Link to="/create">Create</Link>
         <Link to="/results">Results</Link>
