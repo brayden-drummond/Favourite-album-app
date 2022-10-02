@@ -10,14 +10,14 @@ import Create from './Create'
 
 export default function App() {
   return (
-    <div className="app">
+    <div className='app'>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/play" element={<Play />} />
-        <Route path="/play/winner" element={<Winner />} />
-        <Route path="/results" element={<Results />} />
-        <Route path="/create" element={<Create />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/play' element={<Play />} />
+        <Route path='/winner' element={<Winner />} />
+        <Route path='/results' element={<Results />} />
+        <Route path='/create' element={<Create />} />
       </Routes>
     </div>
   )
