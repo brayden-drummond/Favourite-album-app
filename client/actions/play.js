@@ -1,19 +1,19 @@
-import { getHomeContent } from '../apis/home'
+import { getPlayContent } from '../apis/play'
 
-export const SET_HOME_CONTENT = 'SET_HOME_CONTENT'
+export const SET_PLAY_CONTENT = 'SET_PLAY_CONTENT'
 
-export function setHomeContent(homeContent) {
+export function setPlayContent(playContent) {
   return {
-    type: SET_HOME_CONTENT,
-    payload: homeContent,
+    type: SET_PLAY_CONTENT,
+    payload: playContent,
   }
 }
 
-export function fetchHomeContent() {
+export function fetchPlayContent() {
   return (dispatch) => {
-    return getHomeContent()
-      .then((homeContent) => {
-        dispatch(setHomeContent(homeContent))
+    return getPlayContent()
+      .then((playContent) => {
+        dispatch(setPlayContent(playContent))
       })
       .catch((error) => {
         console.error(error.message)
