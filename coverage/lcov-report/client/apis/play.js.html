@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for client/apis/home.js</title>
+    <title>Code coverage report for client/apis/play.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">client/apis</a> home.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">client/apis</a> play.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -75,7 +75,7 @@
 <a name='L10'></a><a href='#L10'>10</a>
 <a name='L11'></a><a href='#L11'>11</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -87,9 +87,9 @@
 &nbsp;
 const rootUrl = '/api/v1'
 &nbsp;
-//GET api/v1/home
-export function getHomeContent() {
-  return request.get(rootUrl + '/home').then((res) =&gt; {
+//GET api/v1/play
+export function getPlayContent() {
+  return request.get(rootUrl + '/play').then((res) =&gt; {
     return res.body
   })
 }
