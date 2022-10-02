@@ -18,6 +18,12 @@ export default function FoodTile() {
     dispatch(fetchPlayContent())
   }, [])
 
+  useEffect(() => {
+    if (movies.length === 1) {
+      navigate('/winner')
+    }
+  }, [])
+
   return (
     <div>
       <p>{movieA}</p>
