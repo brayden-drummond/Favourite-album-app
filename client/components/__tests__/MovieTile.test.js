@@ -26,8 +26,8 @@ const mockMovies = [
 const fakeDispatch = jest.fn()
 jest.mock('../../actions/play')
 
-const fakeFunction = jest.fn()
-fetchPlayContent.mockReturnValue(fakeFunction)
+const mockMoviesReturn = () => 'mockReturn'
+fetchPlayContent.mockReturnValue(mockMoviesReturn)
 
 const fakeStore = {
   subscribe: jest.fn(),
@@ -52,5 +52,15 @@ describe('<MovieTile />', () => {
     )
     const images = screen.getAllByRole('img', { exact: false })
     expect(images).toBeTruthy()
+  })
+  it('dispatches fetchPlayContent thunk on useEffect()', () => {
+    render(
+      <Provider store={fakeStore}>
+        <BrowserRouter>
+          <MovieTile />
+        </BrowserRouter>
+      </Provider>
+    )
+    expect(fakeStore.dispatch).toHaveBeenCalledWith(mockMoviesReturn)
   })
 })
