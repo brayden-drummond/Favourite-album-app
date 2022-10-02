@@ -1,4 +1,9 @@
-import { fetchPlayContent, SET_PLAY_CONTENT } from '../play'
+import {
+  deletePlayContent,
+  DELETE_PLAY_CONTENT,
+  fetchPlayContent,
+  SET_PLAY_CONTENT,
+} from '../play'
 import { getPlayContent } from '../../apis/play'
 
 jest.mock('../../apis/play')
@@ -25,6 +30,13 @@ const mockMoviesData = [
     image_url: '/images/bohemian-rhapsody.jpg',
   },
 ]
+
+describe('deletePlayContent', () => {
+  it('deletes the result by Id from play content', () => {
+    expect(deletePlayContent(1).type).toBe(DELETE_PLAY_CONTENT)
+    expect(deletePlayContent(1).payload).toBe(1)
+  })
+})
 
 describe('fetchHPlayContent', () => {
   it('dispatches SET_PLAY_CONTENT action', () => {
