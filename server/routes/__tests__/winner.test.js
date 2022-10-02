@@ -25,7 +25,6 @@ describe('POST /api/v1/winner', () => {
       .post('/api/v1/winner')
       .send({ movies_id: 4 })
       .then((res) => {
-        console.log(addResult.mock.calls[0][0])
         expect(res.status).toBe(204)
         expect(addResult.mock.calls[0][0].movies_id).toBe(4)
         return null
