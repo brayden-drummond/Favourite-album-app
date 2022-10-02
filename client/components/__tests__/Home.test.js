@@ -40,4 +40,27 @@ describe('<Home />', () => {
     expect(movieName).toBeTruthy()
     expect(movieImage.src).toMatch(mockHomeData.imageUrl)
   })
+  it('has a link to the play button.', () => {
+    render(
+      <Provider store={fakeStore}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </Provider>
+    )
+    const link = screen.getByRole('link')
+    expect(link).toHaveAttribute('href', '/play')
+  })
+  it('dispatches the fetchHomeContent() thunk on useEffect()', () => {
+    const mockReturn = () => 'mockReturnFunctionsReturnValue'
+    fetchHomeContent.mockReturnValue(mockReturn)
+    render(
+      <Provider store={fakeStore}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </Provider>
+    )
+    expect(fakeStore.dispatch).toHaveBeenCalledWith(mockReturn)
+  })
 })
