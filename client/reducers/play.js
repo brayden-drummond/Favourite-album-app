@@ -1,11 +1,11 @@
-import { SET_MOVIES } from '../actions/play'
+import { SET_PLAY_CONTENT } from '../actions/play'
 
 const initialState = []
 
 const reducer = (state = initialState, action) => {
   const { type, payload } = action
   switch (type) {
-    case SET_MOVIES:
+    case SET_PLAY_CONTENT:
       return payload
     default:
       return state
