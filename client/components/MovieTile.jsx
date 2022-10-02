@@ -38,7 +38,7 @@ export default function FoodTile() {
       >
         <img className={styles.image} src={movieA?.imageUrl} alt={movies.id} />
         <div className={styles.middle}>
-          <p className={styles.pickme}>Pick Me!</p>
+          <p className={styles.name}>{movieA?.name}</p>
           <p className={styles.description}>{movieA?.description}</p>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default function FoodTile() {
       >
         <img className={styles.image} src={movieB?.imageUrl} alt={movies.id} />
         <div className={styles.middle}>
-          <p className={styles.pickme}>Pick Me!</p>
+          <p className={styles.name}>{movieB?.name}</p>
           <p className={styles.description}>{movieB?.description}</p>
         </div>
       </div>
