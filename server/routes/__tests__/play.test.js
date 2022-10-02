@@ -1,7 +1,7 @@
 const request = require('supertest')
 const server = require('../../server')
 
-const { getMovies } = require('../../db/play')
+const { getAllMovies } = require('../../db/play')
 jest.mock('../../db/play')
 
 const mockMoviesData = [
@@ -23,7 +23,7 @@ const mockMoviesData = [
 
 describe('GET /api/v1/play', () => {
   it('should return status 200 and all movies from db if successful', () => {
-    getMovies.mockReturnValue(Promise.resolve(mockMoviesData))
+    getAllMovies.mockReturnValue(Promise.resolve(mockMoviesData))
     return request(server)
       .get('/api/v1/play')
       .then((res) => {
@@ -32,7 +32,7 @@ describe('GET /api/v1/play', () => {
       })
   })
   it('should return status 500 and an error message when database fails', () => {
-    getMovies.mockImplementation(() =>
+    getAllMovies.mockImplementation(() =>
       Promise.reject(new Error('Something went wrong'))
     )
     return request(server)

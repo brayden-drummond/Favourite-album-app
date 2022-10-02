@@ -1,6 +1,6 @@
 const connection = require('./connection')
 
-function getMovies(db = connection) {
+function getAllMovies(db = connection) {
   return db('movies').select(
     'id',
     'uploader_id as uploaderId',
@@ -10,4 +10,4 @@ function getMovies(db = connection) {
   )
 }
 
-module.exports = { getMovies }
+module.exports = { getAllMovies }
