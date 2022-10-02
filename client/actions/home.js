@@ -13,7 +13,6 @@ export function fetchHomeContent() {
   return (dispatch) => {
     return getHomeContent()
       .then((homeContent) => {
-        console.log(homeContent)
         dispatch(setHomeContent(homeContent))
       })
       .catch((error) => {

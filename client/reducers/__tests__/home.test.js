@@ -21,4 +21,10 @@ describe('home reducer', () => {
     expect(outputState).toEqual(expectedState)
     expect(outputState).not.toEqual(initialState)
   })
+  it('returns the default initial state for an undefined state and no action type.', () => {
+    const expectedState = {}
+    const outputState = home(undefined, {})
+
+    expect(outputState).toEqual(expectedState)
+  })
 })
