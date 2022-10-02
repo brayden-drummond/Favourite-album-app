@@ -22,7 +22,7 @@ const mockMoviesData = [
 ]
 
 describe('GET /api/v1/play', () => {
-  it('should return status 200 and a random movie from db if successful', () => {
+  it('should return status 200 and all movies from db if successful', () => {
     getMovies.mockReturnValue(Promise.resolve(mockMoviesData))
     return request(server)
       .get('/api/v1/play')
