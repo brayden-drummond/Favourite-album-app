@@ -1,13 +1,13 @@
 const express = require('express')
-const db = require('../db/play')
+const { getMovies } = require('../db/play')
 const router = express.Router()
 // const checkJwt = require('../auth0')
 
 //pass in checkJwt
 router.get('/', (req, res) => {
-  db.getMovies()
-    .then((results) => {
-      res.json(results)
+  return getMovies()
+    .then((movies) => {
+      res.json(movies)
     })
     .catch((err) => {
       console.error(err.message)
