@@ -21,11 +21,11 @@ export default function Results() {
             <div key={i} className={styles.movieContainer}>
               <img
                 className={styles.image}
-                src={results.movieImage}
-                alt={results.movieName}
+                src={result.movieImage}
+                alt={result.movieName}
               />
-              <p>{results.movieName}</p>
-              <p>{results.description}</p>
+              <p>{result.movieName}</p>
+              <p>{result.description}</p>
             </div>
           )
         })}

@@ -7,7 +7,7 @@ const router = express.Router()
 
 //pass in checkJwt and auth0id
 router.get('/', (req, res) => {
-  const auth0Id = 'brayden'
+  const auth0Id = 1
   return getResultsByAuth0Id(auth0Id)
     .then((results) => {
       res.json(results)
