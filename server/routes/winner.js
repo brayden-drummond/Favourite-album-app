@@ -8,7 +8,7 @@ const router = express.Router()
 
 router.post('/', (req, res) => {
   const movies_id = req.body.movies_id
-  const auth0_id = 1
+  const auth0_id = '1'
   const created = new Date(Date.now())
   db.addResult({ movies_id, auth0_id, created })
     .then(() => {

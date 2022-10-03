@@ -8,6 +8,6 @@ export function addNewResult(newResult) {
     request
       .post(rootUrl + '/winner')
       // .set('Authorization', `Bearer ${token}`)
-      .send({ food_id: newResult.id })
+      .send({ movies_id: newResult.id })
   )
 }
