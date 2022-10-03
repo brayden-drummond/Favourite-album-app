@@ -24,7 +24,7 @@ export default function Results() {
                 src={result.movieImage}
                 alt={result.movieName}
               />
-              <p>{result.movieName}</p>
+              <p className={styles.name}>{result.movieName}</p>
               <p>{result.movieDescription}</p>
             </div>
           )
