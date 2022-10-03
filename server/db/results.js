@@ -7,8 +7,8 @@ function getResultsByAuth0Id(auth0Id, db = connection) {
     .select(
       'movies.name as movieName',
       'results.created as createdDate',
-      'movies.description as movieDescription'
-      // 'movies.image_url, as movieImage'
+      'movies.description as movieDescription',
+      'movies.image_url as movieImage'
     )
 }
 
