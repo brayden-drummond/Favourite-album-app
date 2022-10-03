@@ -36,7 +36,7 @@ describe('GET /api/v1/results', () => {
       Promise.reject(new Error('Something went wrong'))
     )
     return request(server)
-      .get('/api/v1/play')
+      .get('/api/v1/results')
       .then((res) => {
         expect(res.status).toBe(500)
         expect(res.text).toContain('wrong')
