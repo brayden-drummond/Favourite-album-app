@@ -25,7 +25,7 @@ export default function Results() {
                 alt={result.movieName}
               />
               <p>{result.movieName}</p>
-              <p>{result.description}</p>
+              <p>{result.movieDescription}</p>
             </div>
           )
         })}
