@@ -1,10 +1,10 @@
 import { addNewMovie } from '../apis/create'
 
-export const SET_RESULT = 'SET_RESULT'
+export const ADD_MOVIE = 'ADD_MOVIE'
 
 export function addMovie(newMovie) {
   return {
-    type: SET_RESULT,
+    type: ADD_MOVIE,
     payload: newMovie,
   }
 }
