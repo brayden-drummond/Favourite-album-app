@@ -7,6 +7,7 @@ import Play from './Play'
 import Winner from './Winner'
 import Results from './Results'
 import Create from './Create'
+import Movies from './Movies'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/movies' element={<Movies />} />
         <Route path='/play' element={<Play />} />
         <Route path='/winner' element={<Winner />} />
         <Route path='/results' element={<Results />} />
