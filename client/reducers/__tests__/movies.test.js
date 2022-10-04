@@ -1,5 +1,5 @@
 import { SET_MOVIES_CONTENT } from '../../actions/home'
-import home from '../home'
+import movies from '../movies'
 
 const mockMoviesContentData = [
   {
@@ -26,13 +26,13 @@ describe('movies reducer', () => {
     }
     const initialState = []
     const expectedState = mockMoviesContentData
-    const outputState = home(initialState, action)
+    const outputState = movies(initialState, action)
     expect(outputState).toEqual(expectedState)
     expect(outputState).not.toEqual(initialState)
   })
   it('returns the default initial state for an undefined state and no action type.', () => {
     const expectedState = []
-    const outputState = home(undefined, [])
+    const outputState = movies(undefined, [])
 
     expect(outputState).toEqual(expectedState)
   })

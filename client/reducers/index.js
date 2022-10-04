@@ -5,6 +5,7 @@ import play from './play'
 import winner from './winner'
 import results from './results'
 import create from './create'
+import movies from './movies'
 
 export default combineReducers({
   home,
@@ -12,4 +13,5 @@ export default combineReducers({
   winner,
   results,
   create,
+  movies,
 })
