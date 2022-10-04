@@ -14,14 +14,14 @@ export default function Results() {
   }, [])
   return (
     <>
-      <h1 className={styles.heading}>Here are your results!</h1>
+      <h1 className={styles.heading}>Here are a list of movies!</h1>
       <div className={styles.container}>
         {movies.map((movie, i) => {
           return (
             <div key={i} className={styles.movieContainer}>
               <img
                 className={styles.image}
-                src={movie.image}
+                src={movie.imageUrl}
                 alt={movie.name}
               />
               <p className={styles.name}>{movie.name}</p>
