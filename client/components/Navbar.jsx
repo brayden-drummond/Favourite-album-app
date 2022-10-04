@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className={styles.links}>
         <Link to='/movies'>Movies</Link>
         <Link to='/play'>Play</Link>
-        <Link to='/create'>Create</Link>
+        <Link to='/create'>Add Movie</Link>
         <Link to='/results'>Results</Link>
         <div className='navbar-login'>Register | Log In | Log Out</div>
       </div>

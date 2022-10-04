@@ -23,7 +23,7 @@ export default function Create() {
     event.preventDefault()
     dispatch(addMovie(movie))
     setMovie(initialData)
-    navigate('/')
+    navigate('/movies')
   }
 
   return (
