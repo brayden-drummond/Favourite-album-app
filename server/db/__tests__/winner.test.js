@@ -8,7 +8,7 @@ beforeAll(() => testDb.migrate.latest())
 beforeEach(() => testDb.seed.run())
 
 describe('addResult', () => {
-  const result = { auth0_id: 4, movies_id: 7, created: new Date(Date.now()) }
+  const result = { name: 'test', description: 7, created: new Date(Date.now()) }
   it('adds new result and return correct results array', () => {
     return db
       .addResult(result, testDb)
