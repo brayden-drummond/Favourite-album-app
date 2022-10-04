@@ -1,4 +1,4 @@
-import { SET_MOVIES_CONTENT } from '../../actions/home'
+import { SET_MOVIES_CONTENT } from '../../actions/movies'
 import movies from '../movies'
 
 const mockMoviesContentData = [
