@@ -1,18 +1,12 @@
 import { addNewMovie } from '../apis/create'
+import { fetchMovies } from '../apis/movies'
 
 export const ADD_MOVIE = 'ADD_MOVIE'
 
-export function addMovie(newMovie) {
-  return {
-    type: ADD_MOVIE,
-    payload: newMovie,
-  }
-}
-
-export function fetchAddNewMovie(newMovie, token) {
+export function addMovie(newMovie, token) {
   return (dispatch) => {
     return addNewMovie(newMovie, token).then(() => {
-      dispatch(addMovie(newMovie))
+      dispatch(fetchMovies())
       return null
     })
   }

@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { fetchAddNewMovie } from '../actions/create'
 import styles from './Create.module.scss'
 
 export default function Create() {
   const dispatch = useDispatch()
-  const create = useSelector((state) => state.create)
+  const navigate = useNavigate()
+
   const initialData = {
     name: '',
     description: '',
@@ -19,9 +21,48 @@ export default function Create() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(fetchAddNewMovie(event.target))
+    dispatch(fetchAddNewMovie(movie))
     setMovie(initialData)
+    navigate('/')
   }
 
-  return <h2>Create</h2>
+  return (
+    <div className={styles.container}>
+      <div className='add-character-box'>
+        <h2>Please add a new movie</h2>
+        <form onSubmit={handleSubmit}>
+          <div className='add-character-form'>
+            <label htmlFor='name'>
+              Name:
+              <input
+                id='name'
+                onChange={handleChange}
+                value={movie.name}
+                name='name'
+              />
+            </label>
+            <label htmlFor='description'>
+              Description:
+              <input
+                id='description'
+                onChange={handleChange}
+                value={movie.description}
+                name='description'
+              />
+            </label>
+            <label htmlFor='image_url'>
+              Image:
+              <input
+                id='image_url'
+                onChange={handleChange}
+                value={movie.image_url}
+                name='image_url'
+              />
+            </label>
+            <button className='form-button'>Add Movie</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
 }
