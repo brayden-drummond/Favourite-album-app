@@ -1,5 +1,5 @@
 import { addNewMovie } from '../apis/create'
-import { fetchMovies } from '../apis/movies'
+import { fetchMovies } from '../actions/movies'
 
 export const ADD_MOVIE = 'ADD_MOVIE'
 
