@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { fetchAddNewMovie } from '../actions/create'
+import { addMovie } from '../actions/create'
 import styles from './Create.module.scss'
 
 export default function Create() {
@@ -21,7 +21,7 @@ export default function Create() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(fetchAddNewMovie(movie))
+    dispatch(addMovie(movie))
     setMovie(initialData)
     navigate('/')
   }
