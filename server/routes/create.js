@@ -19,6 +19,7 @@ const router = express.Router()
 //     })
 // })
 
+//POST api/v1/create
 router.post('/', (req, res) => {
   const uploader_id = '1'
   const { name, description, image_url } = req.body
