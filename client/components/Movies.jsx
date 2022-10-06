@@ -28,9 +28,14 @@ export default function Results() {
               />
               <p className={styles.name}>{movie.name}</p>
               <p>{movie.description}</p>
-              <button onClick={() => dispatch(deleteMovieAction(movie))}>
-                Remove
-              </button>
+              <div className={styles.buttonContainer}>
+                <button
+                  className={styles.button}
+                  onClick={() => dispatch(deleteMovieAction(movie))}
+                >
+                  Remove
+                </button>
+              </div>
             </div>
           )
         })}
