@@ -1,9 +1,9 @@
 const request = require('supertest')
 const server = require('../../server')
 
-const { addMovie } = require('../../db/create')
+const { deleteMovie } = require('../../db/delete')
 
-jest.mock('../../db/create')
+jest.mock('../../db/delete')
 jest.spyOn(console, 'error')
 
 afterEach(() => {
@@ -18,33 +18,24 @@ afterEach(() => {
 //   next()
 // })
 
-const mockMovie = {
-  uploader_id: '1',
-  name: 'test',
-  description: 'test',
-  image_url: 'test',
-}
-
-describe('POST /api/v1/create', () => {
-  it('post new movie to movies array', () => {
-    addMovie.mockReturnValue(Promise.resolve([5]))
+describe('DELETE /api/v1/delete', () => {
+  it('passes res.body of 1 to deleteMovie db function', () => {
+    deleteMovie.mockReturnValue(Promise.resolve(1))
     return request(server)
-      .post('/api/v1/create')
-      .send(mockMovie)
+      .delete('/api/v1/delete')
       .then((res) => {
-        expect(res.status).toBe(204)
-        expect(addMovie.mock.calls[0][0].uploader_id).toBe('1')
+        expect(res.status).toBe(200)
+        expect(res.body).toBe(1)
         return null
       })
   })
   it('return status 500 and consoles error when problem', () => {
-    addMovie.mockImplementation(() => Promise.reject(new Error('fail')))
+    deleteMovie.mockImplementation(() => Promise.reject(new Error('fail')))
     console.error.mockImplementation(() => {})
     return request(server)
-      .post('/api/v1/create')
+      .delete('/api/v1/delete')
       .then((res) => {
         expect(res.status).toBe(500)
-        expect(console.error).toHaveBeenCalledWith('fail')
         return null
       })
   })
