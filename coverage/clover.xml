@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1664924325185" clover="3.2.0">
-  <project timestamp="1664924325185" name="All files">
-    <metrics statements="210" coveredstatements="200" conditionals="29" coveredconditionals="22" methods="92" coveredmethods="81" elements="331" coveredelements="303" complexity="0" loc="210" ncloc="210" packages="6" files="36" classes="36"/>
+<coverage generated="1665018731150" clover="3.2.0">
+  <project timestamp="1665018731150" name="All files">
+    <metrics statements="229" coveredstatements="218" conditionals="30" coveredconditionals="22" methods="102" coveredmethods="90" elements="361" coveredelements="330" complexity="0" loc="229" ncloc="229" packages="6" files="40" classes="40"/>
     <package name="client.actions">
-      <metrics statements="37" coveredstatements="33" conditionals="0" coveredconditionals="0" methods="28" coveredmethods="25"/>
+      <metrics statements="41" coveredstatements="37" conditionals="0" coveredconditionals="0" methods="32" coveredmethods="29"/>
       <file name="create.js" path="/home/brayden-drummond/Applications/Favourite-album-app/client/actions/create.js">
         <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="4" count="1" type="stmt"/>
@@ -11,6 +11,13 @@
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
+      </file>
+      <file name="delete.js" path="/home/brayden-drummond/Applications/Favourite-album-app/client/actions/delete.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
       </file>
       <file name="home.js" path="/home/brayden-drummond/Applications/Favourite-album-app/client/actions/home.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
@@ -23,9 +30,9 @@
       </file>
       <file name="movies.js" path="/home/brayden-drummond/Applications/Favourite-album-app/client/actions/movies.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
-        <line num="3" count="4" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
@@ -61,11 +68,16 @@
       </file>
     </package>
     <package name="client.apis">
-      <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="10"/>
+      <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="11" coveredmethods="11"/>
       <file name="create.js" path="/home/brayden-drummond/Applications/Favourite-album-app/client/apis/create.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="2" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
+      </file>
+      <file name="delete.js" path="/home/brayden-drummond/Applications/Favourite-album-app/client/apis/delete.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
       </file>
       <file name="home.js" path="/home/brayden-drummond/Applications/Favourite-album-app/client/apis/home.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -75,7 +87,7 @@
       </file>
       <file name="movies.js" path="/home/brayden-drummond/Applications/Favourite-album-app/client/apis/movies.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="3" count="5" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
       </file>
@@ -98,7 +110,7 @@
       </file>
     </package>
     <package name="client.components">
-      <metrics statements="40" coveredstatements="38" conditionals="4" coveredconditionals="2" methods="23" coveredmethods="19"/>
+      <metrics statements="41" coveredstatements="38" conditionals="4" coveredconditionals="2" methods="24" coveredmethods="19"/>
       <file name="Home.jsx" path="/home/brayden-drummond/Applications/Favourite-album-app/client/components/Home.jsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="9" count="3" type="stmt"/>
@@ -124,13 +136,14 @@
         <line num="50" count="1" type="stmt"/>
       </file>
       <file name="Movies.jsx" path="/home/brayden-drummond/Applications/Favourite-album-app/client/components/Movies.jsx">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
+        <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
       </file>
       <file name="Play.jsx" path="/home/brayden-drummond/Applications/Favourite-album-app/client/components/Play.jsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -220,114 +233,132 @@
       </file>
     </package>
     <package name="server.db">
-      <metrics statements="15" coveredstatements="15" conditionals="5" coveredconditionals="0" methods="5" coveredmethods="5"/>
+      <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="0" methods="6" coveredmethods="6"/>
       <file name="create.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/db/create.js">
         <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="6" type="stmt"/>
+        <line num="1" count="7" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="7" count="6" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+      </file>
+      <file name="delete.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/db/delete.js">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
       </file>
       <file name="home.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/db/home.js">
         <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="6" type="stmt"/>
+        <line num="1" count="7" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
       </file>
       <file name="play.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/db/play.js">
         <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="6" type="stmt"/>
+        <line num="1" count="7" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
       </file>
       <file name="results.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/db/results.js">
         <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="6" type="stmt"/>
+        <line num="1" count="7" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
       </file>
       <file name="winner.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/db/winner.js">
         <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="6" type="stmt"/>
+        <line num="1" count="7" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="7" count="6" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
       </file>
     </package>
     <package name="server.routes">
-      <metrics statements="62" coveredstatements="59" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="15"/>
+      <metrics statements="71" coveredstatements="68" conditionals="0" coveredconditionals="0" methods="21" coveredmethods="18"/>
       <file name="create.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/routes/create.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="2" count="5" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="22" count="5" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
         <line num="24" count="2" type="stmt"/>
         <line num="25" count="2" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
-        <line num="35" count="5" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="36" count="6" type="stmt"/>
+      </file>
+      <file name="delete.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/routes/delete.js">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
       </file>
       <file name="home.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/routes/home.js">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
       </file>
       <file name="movies.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/routes/movies.js">
         <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
       </file>
       <file name="play.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/routes/play.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="2" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
-        <line num="19" count="5" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
       </file>
       <file name="results.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/routes/results.js">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="5" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
-        <line num="20" count="5" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
       </file>
       <file name="user.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/routes/user.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="5" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
       </file>
       <file name="winner.js" path="/home/brayden-drummond/Applications/Favourite-album-app/server/routes/winner.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
@@ -335,7 +366,7 @@
         <line num="15" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
       </file>
     </package>
   </project>
