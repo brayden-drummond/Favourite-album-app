@@ -32,6 +32,14 @@ export default function Create() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.video}>
+        {/* <video
+          src='../../server/public/videos/AddMovieBackground.mp4'
+          autoPlay
+          loop
+          muted
+        /> */}
+      </div>
       <div className={styles.card}>
         <img
           className={styles.image}
