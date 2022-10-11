@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { addMovie } from '../actions/create'
+import { fetchHomeContent } from '../actions/home'
 import styles from './Create.module.scss'
 
 export default function Create() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
+  useEffect(() => dispatch(fetchHomeContent()), [])
+  const cardImage = useSelector((state) => state.home)
 
   const initialData = {
     name: '',
@@ -28,38 +32,54 @@ export default function Create() {
 
   return (
     <div className={styles.container}>
-      <div className='add-character-box'>
-        <h2>Please add a new movie</h2>
+      <div className={styles.card}>
+        <img
+          className={styles.image}
+          src={cardImage.imageUrl}
+          alt={cardImage.description}
+        ></img>
+        <h2 className={styles.heading}>Please add a new movie</h2>
         <form onSubmit={handleSubmit}>
-          <div className='add-character-form'>
-            <label htmlFor='name'>
-              Name:
+          <div className={styles.form}>
+            <div className={styles.input}>
               <input
+                className={styles.inputfield}
                 id='name'
                 onChange={handleChange}
                 value={movie.name}
                 name='name'
               />
-            </label>
-            <label htmlFor='description'>
-              Description:
+              <label className={styles.inputlabel} htmlFor='name'>
+                Name:
+              </label>
+            </div>
+            <div className={styles.input}>
               <input
+                className={styles.inputfield}
                 id='description'
                 onChange={handleChange}
                 value={movie.description}
                 name='description'
               />
-            </label>
-            <label htmlFor='image_url'>
-              Image:
+              <label className={styles.inputlabel} htmlFor='description'>
+                Description:
+              </label>
+            </div>
+            <div className={styles.input}>
               <input
+                className={styles.inputfield}
                 id='image_url'
                 onChange={handleChange}
                 value={movie.image_url}
                 name='image_url'
               />
-            </label>
-            <button className='form-button'>Add Movie</button>
+              <label className={styles.inputlabel} htmlFor='image_url'>
+                Image:
+              </label>
+            </div>
+            <div className={styles.buttonbox}>
+              <button className={styles.button}>Add Movie</button>
+            </div>
           </div>
         </form>
       </div>
