@@ -12,7 +12,7 @@ export function updateLoggedInUser(userToSave) {
 
 export function clearLoggedInUser() {
   return {
-    type: UPDATE_LOGGED_IN_USER,
+    type: CLEAR_LOGGED_IN_USER,
   }
 }
 
