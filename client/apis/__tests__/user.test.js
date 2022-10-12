@@ -43,4 +43,13 @@ describe('addUser', () => {
       scope.done()
     })
   })
+  it('returns error message if it fails', () => {
+    const scope = nock('http://localhost')
+      .post('/api/v1/user')
+      .replyWithError(errorMessage)
+    return addUser().then(() => {
+      expect(console.error).toHaveBeenCalledWith(errorMessage)
+      scope.done()
+    })
+  })
 })
