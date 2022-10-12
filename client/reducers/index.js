@@ -6,6 +6,7 @@ import winner from './winner'
 import results from './results'
 import create from './create'
 import movies from './movies'
+import user from './user'
 
 export default combineReducers({
   home,
@@ -14,4 +15,5 @@ export default combineReducers({
   results,
   create,
   movies,
+  user,
 })
