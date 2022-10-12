@@ -21,4 +21,26 @@ describe('GET /api/v1/user', () => {
     expect(user).toEqual(mockUser)
     scope.done()
   })
+  it('returns error message if it fails', () => {
+    const scope = nock('http://localhost')
+      .get('/api/v1/user')
+      .replyWithError(errorMessage)
+    return getUser().then(() => {
+      expect(console.error).toHaveBeenCalledWith(errorMessage)
+      scope.done()
+    })
+  })
+})
+
+describe('addUser', () => {
+  it('posts new user back', () => {
+    const scope = nock('http://localhost')
+      .post('/api/v1/user')
+      .reply(200, mockUser)
+
+    return addUser(mockUser).then((result) => {
+      expect(result).toStrictEqual(mockUser)
+      scope.done()
+    })
+  })
 })
