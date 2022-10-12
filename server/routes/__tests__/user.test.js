@@ -18,9 +18,11 @@ checkJwt.mockImplementation((req, res, next) => {
   next()
 })
 
+const fakeUser = { auth0_id: 3, name: 'Jim' }
+
 getUser.mockReturnValue(Promise.resolve({ id: 1, name: 'Fred' }))
 userExists.mockReturnValue(Promise.resolve(false))
-addUser.mockReturnValue(Promise.resolve([4]))
+addUser.mockReturnValue(Promise.resolve(fakeUser))
 
 describe('GET /api/v1/user', () => {
   it('gets the current user', () => {
@@ -43,12 +45,12 @@ describe('GET /api/v1/user', () => {
 })
 
 describe('POST /api/v1/user', () => {
-  it('creates a new User and sends back the id of the user', () => {
+  it('adds a new user to the database', () => {
     return request(server)
       .post('/api/v1/user')
-      .send({ name: 'Fred' })
       .then((res) => {
         expect(res.status).toBe(201)
+        expect(res.body.name).toBe('Jim')
       })
   })
 })

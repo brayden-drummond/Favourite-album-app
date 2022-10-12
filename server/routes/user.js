@@ -31,9 +31,6 @@ router.post('/', checkJwt, (req, res) => {
     })
     .then(() => db.addUser(user))
     .then(() => res.sendStatus(201))
-    .then((id) => {
-      res.json(id?.[0])
-    })
     .catch((err) => {
       console.error(err.message)
       if (err.message === 'Username Taken') {
