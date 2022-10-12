@@ -22,7 +22,7 @@ server.use('/api/v1/movies', moviesRoutes)
 server.use('/api/v1/winner', winnerRoutes)
 server.use('/api/v1/results', resultsRoutes)
 server.use('/api/v1/create', createRoutes)
-server.use('/api/v1/users', usersRoutes)
+server.use('/api/v1/user', usersRoutes)
 
 server.get('*', (req, res) => {
   res.sendFile(path.resolve('server/public/index.html'))

@@ -27,7 +27,7 @@ router.post('/', checkJwt, (req, res) => {
   const user = { auth0_id, name }
   db.userExists(name)
     .then((usernameTaken) => {
-      if (usernameTaken) throw new Error('Username Taken ')
+      if (usernameTaken) throw new Error('Username Taken')
     })
     .then(() => db.addUser(user))
     .then(() => res.sendStatus(201))
