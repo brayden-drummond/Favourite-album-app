@@ -29,3 +29,9 @@ describe('updateLoggedInUser', () => {
     expect(updateLoggedInUser(mockUser).payload).toBe(mockUser)
   })
 })
+
+describe('clearLoggedInUser', () => {
+  it('clears the logged in user', () => {
+    expect(clearLoggedInUser().type).toBe(CLEAR_LOGGED_IN_USER)
+  })
+})
