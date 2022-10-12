@@ -18,7 +18,7 @@ afterAll(() => {
 
 describe('userExists', () => {
   it('checks if the user exists in database', () => {
-    return userExists('1', testCon).then((res) => {
+    return userExists('Food', testCon).then((res) => {
       expect(res).toBe(true)
     })
   })

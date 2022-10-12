@@ -1,8 +1,8 @@
 const connection = require('./connection')
 
-function userExists(auth0_id, db = connection) {
+function userExists(name, db = connection) {
   return db('users')
-    .where('auth0_id', auth0_id)
+    .where('name', name)
     .then((usersFound) => usersFound.length > 0)
 }
 
