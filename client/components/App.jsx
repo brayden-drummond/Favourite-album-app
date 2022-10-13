@@ -8,6 +8,7 @@ import Winner from './Winner'
 import Results from './Results'
 import Create from './Create'
 import Movies from './Movies'
+//import Register
 
 export default function App() {
   return (
