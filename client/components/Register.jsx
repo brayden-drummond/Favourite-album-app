@@ -8,7 +8,8 @@ import { updateLoggedInUser } from '../actions/user'
 import styles from './Register.module.scss'
 
 export default function Register() {
-  const user = useSelector((state) => state.loggedInUser)
+  //change user to be state.loggedInUser
+  const user = useSelector((state) => state.user)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [form, setForm] = useState({
@@ -55,6 +56,7 @@ export default function Register() {
               value={form.name}
               onChange={handleChange}
             ></input>
+            <button className={styles.button}>Save Profile</button>
           </form>
         </div>
       </div>
