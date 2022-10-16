@@ -8,12 +8,11 @@ import { deleteMovieAction } from '../actions/delete'
 export default function Results() {
   const dispatch = useDispatch()
   const movies = useSelector((state) => state.movies)
-  // const token = useSelector((state) => state.token)
+  const token = useSelector((state) => state.token)
 
   useEffect(() => {
-    //pass in token
-    dispatch(fetchMoviesContent())
-  }, [])
+    dispatch(fetchMoviesContent(token))
+  }, [token])
   return (
     <>
       <h1 className={styles.heading}>Here are a list of movies!</h1>
