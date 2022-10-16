@@ -30,7 +30,7 @@ const fakeStore = {
   subscribe: jest.fn(),
   dispatch: jest.fn(),
   getState: jest.fn(() => {
-    return { play: mockMovies }
+    return { play: mockMovies, user: { token: 'token' } }
   }),
 }
 
