@@ -6,7 +6,7 @@ export const ADD_MOVIE = 'ADD_MOVIE'
 export function addMovie(newMovie, token) {
   return (dispatch) => {
     return addNewMovie(newMovie, token).then(() => {
-      dispatch(fetchMoviesContent())
+      dispatch(fetchMoviesContent(token))
       return null
     })
   }
