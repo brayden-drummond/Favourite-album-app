@@ -10,13 +10,13 @@ afterEach(() => {
   console.error.mockReset()
 })
 
-// const checkJwt = require('../../auth0')
-// jest.mock('../../auth0')
+const checkJwt = require('../../auth0')
+jest.mock('../../auth0')
 
-// checkJwt.mockImplementation((req, res, next) => {
-//   req.user = { sub: 'testAuth0Id' }
-//   next()
-// })
+checkJwt.mockImplementation((req, res, next) => {
+  req.user = { sub: 'testAuth0Id' }
+  next()
+})
 
 const mockMovie = {
   uploader_id: '1',
