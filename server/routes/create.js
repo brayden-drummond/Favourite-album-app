@@ -23,9 +23,9 @@ const router = express.Router()
 
 //POST api/v1/create
 router.post('/', checkJwt, (req, res) => {
-  const uploader_id = '1'
+  const auth0Id = req.user?.sub
   const { name, description, image_url } = req.body
-  addMovie({ uploader_id, name, description, image_url })
+  addMovie({ uploader_id: auth0Id, name, description, image_url })
     .then(() => {
       res.sendStatus(204)
     })
