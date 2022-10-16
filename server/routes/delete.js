@@ -1,10 +1,13 @@
 const express = require('express')
 
 const { deleteMovie } = require('../db/delete')
+
+const checkJwt = require('../auth0')
+
 const router = express.Router()
 
 //delete api/v1/delete
-router.delete('/', (req, res) => {
+router.delete('/', checkJwt, (req, res) => {
   const id = req.body.id
   return deleteMovie(id)
     .then((movies) => {
