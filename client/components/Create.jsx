@@ -11,7 +11,7 @@ export default function Create() {
 
   useEffect(() => dispatch(fetchHomeContent()), [])
   const cardImage = useSelector((state) => state.home)
-  const token = useSelector((state) => state.token)
+  const token = useSelector((state) => state.user?.token)
 
   const initialData = {
     name: '',

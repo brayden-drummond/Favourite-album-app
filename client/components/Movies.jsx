@@ -8,7 +8,7 @@ import { deleteMovieAction } from '../actions/delete'
 export default function Results() {
   const dispatch = useDispatch()
   const movies = useSelector((state) => state.movies)
-  const token = useSelector((state) => state.token)
+  const token = useSelector((state) => state.user?.token)
 
   useEffect(() => {
     dispatch(fetchMoviesContent(token))

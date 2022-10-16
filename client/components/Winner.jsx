@@ -7,7 +7,7 @@ import styles from './Winner.module.scss'
 export default function Winner() {
   const play = useSelector((state) => state.play)
   const winner = useSelector((state) => state.winner)
-  const token = useSelector((state) => state.user.token)
+  const token = useSelector((state) => state.user?.token)
 
   const dispatch = useDispatch()
   const navigate = useNavigate()

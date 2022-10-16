@@ -9,7 +9,7 @@ export default function FoodTile() {
   const dispatch = useDispatch()
 
   const movies = useSelector((state) => state.play)
-  const token = useSelector((state) => state.token)
+  const token = useSelector((state) => state.user?.token)
 
   const movieA = movies[0]
   const movieB = movies[1]
