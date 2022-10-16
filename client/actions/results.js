@@ -10,9 +10,9 @@ export function setResultsContent(resultsContent) {
 }
 
 //pass in token in function
-export function fetchResultsContent() {
+export function fetchResultsContent(token) {
   return (dispatch) => {
-    return getResultsContent()
+    return getResultsContent(token)
       .then((resultsContent) => {
         dispatch(setResultsContent(resultsContent))
       })
