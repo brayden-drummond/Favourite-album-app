@@ -1,7 +1,7 @@
 const request = require('supertest')
 const server = require('../../server')
 
-const { deleteMovie } = require('../../db/delete')
+const { deleteMovie, userCanEdit } = require('../../db/delete')
 
 jest.mock('../../db/delete')
 jest.spyOn(console, 'error')
@@ -20,6 +20,7 @@ checkJwt.mockImplementation((req, res, next) => {
 
 describe('DELETE /api/v1/delete', () => {
   it('passes res.body of 1 to deleteMovie db function', () => {
+    userCanEdit.mockReturnValue(Promise.resolve(1))
     deleteMovie.mockReturnValue(Promise.resolve(1))
     return request(server)
       .delete('/api/v1/delete')
@@ -36,6 +37,22 @@ describe('DELETE /api/v1/delete', () => {
       .delete('/api/v1/delete')
       .then((res) => {
         expect(res.status).toBe(500)
+        expect(res.text).toBe('fail')
+        return null
+      })
+  })
+  it('return status 403 and consoles error when Aunauthorized', () => {
+    deleteMovie.mockImplementation(() =>
+      Promise.reject(new Error('Unauthorized'))
+    )
+    console.error.mockImplementation(() => {})
+    return request(server)
+      .delete('/api/v1/delete')
+      .then((res) => {
+        expect(res.status).toBe(403)
+        expect(res.text).toBe(
+          'Unauthorized. Only the user who added the movie may delete it'
+        )
         return null
       })
   })

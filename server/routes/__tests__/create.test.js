@@ -19,7 +19,7 @@ checkJwt.mockImplementation((req, res, next) => {
 })
 
 const mockMovie = {
-  uploader_id: '1',
+  uploader_id: 'testAuth0Id',
   name: 'test',
   description: 'test',
   image_url: 'test',
@@ -33,7 +33,7 @@ describe('POST /api/v1/create', () => {
       .send(mockMovie)
       .then((res) => {
         expect(res.status).toBe(204)
-        expect(addMovie.mock.calls[0][0].uploader_id).toBe('1')
+        expect(addMovie.mock.calls[0][0].uploader_id).toBe('testAuth0Id')
         return null
       })
   })
