@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { useAuth0 } from '@auth0/auth0-react'
 import { Link } from 'react-router-dom'
 
@@ -8,7 +7,6 @@ import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 import styles from './Navbar.module.scss'
 
 export default function Navbar() {
-  const user = useSelector((state) => state.loggedInUser)
   const { logout, loginWithRedirect } = useAuth0()
 
   const handleLogOff = (e) => {
