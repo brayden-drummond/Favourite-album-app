@@ -30,7 +30,6 @@ describe('userCanEdit', () => {
         return testDb('movies').select()
       })
       .then((res) => {
-        console.log(res)
         expect(res).toHaveLength(4)
         expect(res[0].uploader_id).toEqual(auth0Id)
         return null
