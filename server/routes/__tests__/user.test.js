@@ -53,4 +53,24 @@ describe('POST /api/v1/user', () => {
         // expect(res.body.name).toBe('Jim')
       })
   })
+  it('returns status 500 when get user fails', () => {
+    addUser.mockImplementation(() =>
+      Promise.reject(new Error('Something went wrong'))
+    )
+    return request(server)
+      .post('/api/v1/user')
+      .then((res) => {
+        expect(res.status).toBe(500)
+      })
+  })
+  it('returns status 403 when username taken', () => {
+    userExists.mockImplementation(() =>
+      Promise.reject(new Error('Username Taken'))
+    )
+    return request(server)
+      .post('/api/v1/user')
+      .then((res) => {
+        expect(res.status).toBe(403)
+      })
+  })
 })
