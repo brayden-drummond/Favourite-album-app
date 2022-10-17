@@ -20,3 +20,19 @@ describe('deleteMovie', () => {
       })
   })
 })
+
+describe('userCanEdit', () => {
+  it('allows user to edit based on auth0id', () => {
+    const auth0Id = '1'
+    return db
+      .userCanEdit(1, auth0Id, testDb)
+      .then(() => {
+        return testDb('movies').select()
+      })
+      .then((res) => {
+        expect(res).toHaveLength(4)
+        expect(res[0].uploader_id).toEqual(auth0Id)
+        return null
+      })
+  })
+})

@@ -35,8 +35,9 @@ router.post('/', checkJwt, (req, res) => {
       console.error(err.message)
       if (err.message === 'Username Taken') {
         res.status(403).send('Username Taken')
+      } else {
+        res.status(500).send('Something went wrong')
       }
-      res.status(500).json({ message: 'Something went wrong' })
     })
 })
 
