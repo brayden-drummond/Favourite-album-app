@@ -30,7 +30,7 @@ export default function Results() {
               <div className={styles.buttonContainer}>
                 <button
                   className={styles.button}
-                  onClick={() => dispatch(deleteMovieAction(movie))}
+                  onClick={() => dispatch(deleteMovieAction(movie, token))}
                 >
                   Remove
                 </button>
