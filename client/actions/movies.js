@@ -10,9 +10,9 @@ export function setMoviesContent(moviesContent) {
 }
 
 //pass in token in function
-export function fetchMoviesContent() {
+export function fetchMoviesContent(token) {
   return (dispatch) => {
-    return getMoviesContent()
+    return getMoviesContent(token)
       .then((moviesContent) => {
         dispatch(setMoviesContent(moviesContent))
       })

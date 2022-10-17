@@ -4,6 +4,14 @@ const server = require('../../server')
 const { getAllMovies } = require('../../db/play')
 jest.mock('../../db/play')
 
+const checkJwt = require('../../auth0')
+jest.mock('../../auth0')
+
+checkJwt.mockImplementation((req, res, next) => {
+  req.user = { sub: 'testAuth0Id' }
+  next()
+})
+
 const mockMoviesData = [
   {
     id: 1,

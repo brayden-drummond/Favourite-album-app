@@ -4,6 +4,14 @@ const server = require('../../server')
 const { getResultsByAuth0Id } = require('../../db/results')
 jest.mock('../../db/results')
 
+const checkJwt = require('../../auth0')
+jest.mock('../../auth0')
+
+checkJwt.mockImplementation((req, res, next) => {
+  req.user = { sub: 'testAuth0Id' }
+  next()
+})
+
 const mockResults = [
   {
     id: 1,

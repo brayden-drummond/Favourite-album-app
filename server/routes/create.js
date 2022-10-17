@@ -5,6 +5,8 @@ const { addMovie } = require('../db/create')
 // const { getMovies } = require('../db/home')
 // const { getSignedPutUrl } = require('./lib')
 
+const checkJwt = require('../auth0')
+
 const router = express.Router()
 
 //Fix AWS setup issue
@@ -20,10 +22,10 @@ const router = express.Router()
 // })
 
 //POST api/v1/create
-router.post('/', (req, res) => {
-  const uploader_id = '1'
+router.post('/', checkJwt, (req, res) => {
+  const auth0Id = req.user?.sub
   const { name, description, image_url } = req.body
-  addMovie({ uploader_id, name, description, image_url })
+  addMovie({ uploader_id: auth0Id, name, description, image_url })
     .then(() => {
       res.sendStatus(204)
     })

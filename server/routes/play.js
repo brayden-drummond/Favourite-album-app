@@ -2,10 +2,10 @@ const express = require('express')
 const { getAllMovies } = require('../db/play')
 const router = express.Router()
 
-// const checkJwt = require('../auth0')
+const checkJwt = require('../auth0')
 
 //pass in checkJwt
-router.get('/', (req, res) => {
+router.get('/', checkJwt, (req, res) => {
   return getAllMovies()
     .then((movies) => {
       res.json(movies)

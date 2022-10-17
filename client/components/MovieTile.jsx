@@ -9,14 +9,16 @@ export default function FoodTile() {
   const dispatch = useDispatch()
 
   const movies = useSelector((state) => state.play)
+  const token = useSelector((state) => state.user?.token)
 
   const movieA = movies[0]
   const movieB = movies[1]
 
   useEffect(() => {
-    //pass in if (token)
-    dispatch(fetchPlayContent())
-  }, [])
+    if (token) {
+      dispatch(fetchPlayContent(token))
+    }
+  }, [token])
 
   useEffect(() => {
     if (movies.length == 1) {

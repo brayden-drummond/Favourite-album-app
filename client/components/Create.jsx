@@ -11,6 +11,7 @@ export default function Create() {
 
   useEffect(() => dispatch(fetchHomeContent()), [])
   const cardImage = useSelector((state) => state.home)
+  const token = useSelector((state) => state.user?.token)
 
   const initialData = {
     name: '',
@@ -25,7 +26,7 @@ export default function Create() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(addMovie(movie))
+    dispatch(addMovie(movie, token))
     setMovie(initialData)
     navigate('/movies')
   }

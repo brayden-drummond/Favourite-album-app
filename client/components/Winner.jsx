@@ -7,18 +7,18 @@ import styles from './Winner.module.scss'
 export default function Winner() {
   const play = useSelector((state) => state.play)
   const winner = useSelector((state) => state.winner)
-  // const token = useSelector((state) => state.user.token)
+  const token = useSelector((state) => state.user?.token)
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   useEffect(() => {
-    //pass in token
     if (play.length === 1) {
-      dispatch(fetchResult(play[0]))
+      dispatch(fetchResult(play[0], token))
     } else {
       navigate('/play')
     }
-  }, [])
+  }, [token])
 
   return (
     <>

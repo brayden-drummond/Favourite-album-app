@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styles from './Movies.module.scss'
 
@@ -8,12 +8,14 @@ import { deleteMovieAction } from '../actions/delete'
 export default function Results() {
   const dispatch = useDispatch()
   const movies = useSelector((state) => state.movies)
-  // const token = useSelector((state) => state.token)
+  const token = useSelector((state) => state.user?.token)
+  const user = useSelector((state) => state.user)
+
+  const [error, setError] = useState('')
 
   useEffect(() => {
-    //pass in token
-    dispatch(fetchMoviesContent())
-  }, [])
+    dispatch(fetchMoviesContent(token))
+  }, [token])
   return (
     <>
       <h1 className={styles.heading}>Here are a list of movies!</h1>
@@ -29,12 +31,20 @@ export default function Results() {
               <p className={styles.name}>{movie.name}</p>
               <p>{movie.description}</p>
               <div className={styles.buttonContainer}>
-                <button
-                  className={styles.button}
-                  onClick={() => dispatch(deleteMovieAction(movie))}
-                >
-                  Remove
-                </button>
+                {user.auth0Id === movie.uploaderId ? (
+                  <button
+                    className={styles.button}
+                    onClick={() =>
+                      dispatch(deleteMovieAction(movie, token))
+                        .then(() => setError(''))
+                        .catch((err) => setError(err.message))
+                    }
+                  >
+                    Remove
+                  </button>
+                ) : (
+                  <p></p>
+                )}
               </div>
             </div>
           )

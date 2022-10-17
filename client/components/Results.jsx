@@ -6,11 +6,10 @@ import { fetchResultsContent } from '../actions/results'
 export default function Results() {
   const dispatch = useDispatch()
   const results = useSelector((state) => state.results)
-  // const token = useSelector((state) => state.token)
+  const token = useSelector((state) => state.user?.token)
 
   useEffect(() => {
-    //pass in token
-    dispatch(fetchResultsContent())
+    dispatch(fetchResultsContent(token))
   }, [])
   return (
     <>

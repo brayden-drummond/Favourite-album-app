@@ -17,9 +17,9 @@ export function deletePlayContent(playContentId) {
   }
 }
 
-export function fetchPlayContent() {
+export function fetchPlayContent(token) {
   return (dispatch) => {
-    return getPlayContent()
+    return getPlayContent(token)
       .then((playContent) => {
         dispatch(setPlayContent(playContent))
       })
