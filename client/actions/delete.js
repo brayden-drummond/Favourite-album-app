@@ -5,7 +5,7 @@ export function deleteMovieAction(movie, token) {
   return (dispatch) => {
     return deleteMovieContent(movie, token)
       .then(() => {
-        dispatch(fetchMoviesContent())
+        dispatch(fetchMoviesContent(token))
       })
       .catch((error) => {
         console.error(error.message)
