@@ -11,13 +11,21 @@ const router = express.Router()
 router.delete('/', checkJwt, (req, res) => {
   const id = req.body.id
   const auth0Id = req.user?.sub
-  console.log(id)
 
   return userCanEdit(id, auth0Id)
     .then(() => deleteMovie(id))
     .then((movies) => {
       res.json(movies)
     })
-    .catch(() => res.status(500).json({ message: 'Something went wrong' }))
+    .catch((err) => {
+      console.error(err)
+      if (err.message === 'Unauthorized') {
+        res
+          .status(403)
+          .send('Unauthorized. Only the user who added the movie may delete it')
+      } else {
+        res.status(500).send(err.message)
+      }
+    })
 })
 module.exports = router

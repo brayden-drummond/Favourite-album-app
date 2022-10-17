@@ -9,7 +9,7 @@ function userCanEdit(movieId, auth0Id, db = connection) {
     .where('id', movieId)
     .first()
     .then((movie) => {
-      if (movie.uploader_id != auth0Id) {
+      if (movie.uploader_id !== auth0Id) {
         throw new Error('Unauthorized')
       }
     })
